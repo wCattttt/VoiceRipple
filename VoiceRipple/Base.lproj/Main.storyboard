@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oF-Wf-XCf">
+                                <rect key="frame" x="87.5" y="430" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.74357096349999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XSY-cy-jRU"/>
+                                    <constraint firstAttribute="height" constant="40" id="bbU-8j-it2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiY-Cy-eyh" customClass="RippleView">
+                                <rect key="frame" x="0.0" y="80" width="375" height="200"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3oR-6f-1Gs"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i33-Ld-rcR">
+                                <rect key="frame" x="112.5" y="530" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Qge-hW-WFo"/>
+                                    <constraint firstAttribute="height" constant="40" id="zog-ae-8dv"/>
+                                </constraints>
+                                <state key="normal" title="开始录音">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="停止录音"/>
+                                <connections>
+                                    <action selector="voiceAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBu-vC-U8l"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i33-Ld-rcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0VC-B4-fKr"/>
+                            <constraint firstItem="i33-Ld-rcR" firstAttribute="top" secondItem="9oF-Wf-XCf" secondAttribute="bottom" constant="60" id="99T-7P-Qgt"/>
+                            <constraint firstItem="9oF-Wf-XCf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haA-Cm-riW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CiY-Cy-eyh" secondAttribute="trailing" id="lGA-hv-xR8"/>
+                            <constraint firstItem="CiY-Cy-eyh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rLB-x9-HZ2"/>
+                            <constraint firstItem="CiY-Cy-eyh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="suJ-mo-DsY"/>
+                            <constraint firstItem="9oF-Wf-XCf" firstAttribute="top" secondItem="CiY-Cy-eyh" secondAttribute="bottom" constant="150" id="u03-Va-OCh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="_rippleView" destination="CiY-Cy-eyh" id="Zh4-Im-Tog"/>
+                        <outlet property="_valueLabel" destination="9oF-Wf-XCf" id="ney-of-rlr"/>
+                        <outlet property="_voiceBt" destination="i33-Ld-rcR" id="V8X-3C-QUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
